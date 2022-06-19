@@ -1,0 +1,70 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="colorlib.com">
+    <link href= "{{url_for('static', path='css/styles.css')}}"  rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+    <link href="static/css/styles.css" rel="stylesheet" />
+    <style>
+     
+      .content{
+          margin: -6rem 2rem;
+      }
+      .content h2,h3{
+        color: rgb(239, 243, 248);
+        text-align: center;
+      }
+      .table-responsive{
+        margin-top: 3rem;
+        margin: 3rem 7rem;
+        border: 2px solid black;
+        padding:4rem;
+        border-radius: 10px;
+      }
+      legend{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+    <div class="s01">
+      <form method="POST">
+        <fieldset>
+          <legend >Naive Bayes Classification</legend>
+        </fieldset>
+        <div class="inner-form">
+          <div class="input-field first-wrap">
+            <input id="query" type="text" name="query" placeholder="Enter Query " />
+          </div>
+          <div class="input-field third-wrap">
+            <!-- <input class="btn-search" type="submit" name="action" value="Search">
+            <hr>
+            <input class="btn-search" type="submit" name="action" value=" Visual">   -->
+            <!-- <button class="btn-search" type="submit">Search</button>-->
+            <button class="btn-search" type="submit" name="action" value="classify">Classify</button>
+            <hr> 
+            <button class="btn-search" type="submit" name="action" value="features">Model Accuracy</button> 
+          </div>
+        </div>
+      </form>
+    </div>
+
+      <div class="content">
+        {% if data  %}
+        <div class="container">
+          {% if result %}
+         <button class="res_btn">{{result}}</button>
+         {% else %}
+         <button class="res_btn">{{data}}</button>
+         {% endif %}
+        </div>
+        {% endif %}
+        </div>
+
+  </body>
+</html>
